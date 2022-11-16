@@ -1,0 +1,12 @@
+version: "3"
+services:
+  api-server:
+    build:
+      context: .
+      args:
+        NODE_ENV: production
+    ports:
+      - 4000:4000
+    environment:
+      NODE_ENV: production
+    command: node index.js

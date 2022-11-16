@@ -35,3 +35,11 @@ As a file
 ```shell
 docker run -p 3000:3000 -v $(pwd):/app:ro -v /app/node_modules --env-file ./.env -d --name=node-api node-api
 ```
+
+## Removing volumes together with the container
+
+```shell
+docker rm node-app -fv
+```
+
+## Production and Staging environments with one Dockerfile
