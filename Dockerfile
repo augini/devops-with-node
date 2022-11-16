@@ -4,5 +4,6 @@ WORKDIR /app
 COPY ["package.json", "package-lock.json", "./"]
 RUN npm install --production
 COPY . .
-EXPOSE 3000
+ENV PORT 4000
+EXPOSE $PORT
 CMD ["npm", "run", "dev"]
