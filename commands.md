@@ -41,5 +41,3 @@ docker run -p 3000:3000 -v $(pwd):/app:ro -v /app/node_modules --env-file ./.env
 ```shell
 docker rm node-app -fv
 ```
-
-## Production and Staging environments with one Dockerfile
