@@ -4,5 +4,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      MONGO_USER: docker-example
+      MONGO_PASSWORD: docker-example
     ports:
       - 4000:4000
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: docker-example
+      MONGO_INITDB_ROOT_PASSWORD: docker-example
+    volumes:
+      - mongo-db:/data/db
+volumes:
+  mongo-db:
