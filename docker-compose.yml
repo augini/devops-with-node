@@ -9,6 +9,8 @@ services:
       MONGO_PASSWORD: docker-example
     ports:
       - 4000:4000
+    depends_on:
+      - mongo
   mongo:
     image: mongo
     environment:
@@ -16,5 +18,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: docker-example
     volumes:
       - mongo-db:/data/db
+  redis:
+    image: redis:7.0.5-alpine
 volumes:
   mongo-db:
