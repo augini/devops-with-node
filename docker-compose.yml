@@ -12,6 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: augini/docker-node-app
     environment:
       MONGO_USER: docker-example
       MONGO_PASSWORD: docker-example

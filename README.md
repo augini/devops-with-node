@@ -53,3 +53,27 @@ docker inspect container-name
 ```shell
 docker-compsoe -f docker-compose.yml --scale api-server=${number_of_instances}
 ```
+
+## Push an image to DockerHub
+
+Rename the image to the one created in Docker Hub
+
+```
+docker image tag docker-previous-image docker-new-image-name(from docker hub)
+```
+
+Build and push the image to Docker Hub
+
+```
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml build node-api
+```
+
+```
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml push augini/docker-node-app
+```
+
+Pull the image in production server
+
+```
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml pull
+```
