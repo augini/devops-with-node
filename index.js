@@ -32,7 +32,7 @@ mongoose
 
 const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
+app.get("/api/v1", (req, res) => {
   console.log("req received");
   res.send("api is up and been running and again");
 });

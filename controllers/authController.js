@@ -19,6 +19,7 @@ export const signUp = async (req, res) => {
       },
     });
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       status: "fail",
     });
@@ -51,6 +52,7 @@ export const logIn = async (req, res) => {
       });
     }
   } catch (error) {
+    console.log(error);
     res.status(400).json({
       status: "fail",
     });
