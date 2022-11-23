@@ -47,3 +47,9 @@ docker rm node-app -fv
 ```shell
 docker inspect container-name
 ```
+
+## Scale the server
+
+```shell
+docker-compsoe -f docker-compose.yml --scale api-server=${number_of_instances}
+```

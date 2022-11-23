@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { createClient } from "redis";
 import session from "express-session";
 import connect_redis from "connect-redis";
+import cors from "cors";
 
 import config from "./config/config.js";
 import userRouter from "./routes/userRoutes.js";
@@ -32,9 +33,12 @@ mongoose
 const port = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("api is up and been running");
+  console.log("req received");
+  res.send("api is up and been running and again");
 });
 
+app.enable("trust proxy");
+app.use(cors());
 app.use(
   session({
     store: new RedisStore({ client: redisClient }),
