@@ -6,6 +6,20 @@ services:
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
   api-server:
+    deploy:
+      replicas: 8
+      restart_policy:
+        condition: any
+        max_attempts: 3
+      update_config:
+        parallelism: 2
+        failure_action: continue
+        delay: 10s
+        order: stop-first
+      rollback_config:
+        parallelism: 2
+        delay: 10s
+        order: stop-first
     build:
       context: .
       args:
