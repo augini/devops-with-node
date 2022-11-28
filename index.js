@@ -34,7 +34,9 @@ const port = process.env.PORT || 3000;
 
 app.get("/api/v1", (req, res) => {
   console.log("req received");
-  res.send("api is up and been running. No further edits");
+  res.send(
+    "api is up and been running. No further edits. One more change to test if watchtower is working with swarm"
+  );
 });
 
 app.enable("trust proxy");
