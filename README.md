@@ -77,3 +77,9 @@ Pull the image in production server
 ```
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml pull
 ```
+
+Start the services in production server
+
+```
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+```
