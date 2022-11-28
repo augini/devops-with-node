@@ -28,14 +28,14 @@ services:
       MONGO_PASSWORD: ${MONGO_PASSWORD}
       SESSION_SECRET: ${SESSION_SECRET}
     command: node index.js
-  watchtower:
-    image: containrrr/watchtower
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      WATCHTOWER_TRACE: "true"
-      WATCHTOWER_DEBUG: "true"
-      WATCHTOWER_POLL_INTERVAL: 50
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   environment:
+  #     WATCHTOWER_TRACE: "true"
+  #     WATCHTOWER_DEBUG: "true"
+  #     WATCHTOWER_POLL_INTERVAL: 50
   mongo:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
