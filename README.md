@@ -104,3 +104,9 @@ Deploy the services using docker swarm
 ```
 docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml docker-node
 ```
+
+Remove the stack
+
+```
+docker stack rm demo
+```
