@@ -83,3 +83,24 @@ Start the services in production server
 ```
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```
+
+Commands to work with docker swarm
+
+Initialize the docker swarm
+
+```
+docker swarm init <ip-addr-string>
+```
+
+List the services
+
+```
+docker service ls
+docker service ps
+```
+
+Deploy the services using docker swarm
+
+```
+docker stack deploy -c docker-compose.yml -c docker-compose.prod.yml docker-node
+```
