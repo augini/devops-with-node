@@ -14,10 +14,6 @@ services:
         failure_action: continue
         delay: 10s
         order: stop-first
-      rollback_config:
-        parallelism: 2
-        delay: 10s
-        order: stop-first
     build:
       context: .
       args:
