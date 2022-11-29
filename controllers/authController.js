@@ -59,3 +59,40 @@ export const logIn = async (req, res) => {
     });
   }
 };
+
+export const getUserList = async (req, res) => {
+  try {
+    User.find({}, function (err, users) {
+      if (err) {
+        res.status(404).json({
+          status: "fail",
+          message: "user not found",
+        });
+      }
+
+      var userMap = {};
+
+      console.log(users);
+      users.forEach(function (user) {
+        userMap[user._id] = { _id: user._id, username: user.username };
+      });
+
+      if (users) {
+        res.status(200).send({
+          status: "success",
+          users: userMap,
+        });
+      } else {
+        res.status(400).send({
+          status: "fail",
+          message: "incorrect username or password",
+        });
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      status: "fail",
+    });
+  }
+};
