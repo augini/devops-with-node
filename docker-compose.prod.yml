@@ -4,6 +4,7 @@ services:
     ports:
       - "80:80"
   api-server:
+    hostname: "api-server"
     deploy:
       replicas: 8
       restart_policy:
@@ -34,8 +35,9 @@ services:
   #     WATCHTOWER_DEBUG: "true"
   #     WATCHTOWER_POLL_INTERVAL: 50
   mongo:
+    hostname: "mongo"
     deploy:
-      replicas: 8
+      replicas: 2
       restart_policy:
         condition: any
         max_attempts: 3
@@ -47,3 +49,10 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+  redis:
+    hostname: "redis"
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: any
+        max_attempts: 3
